@@ -100,7 +100,22 @@ tr.potluck td {
   }
 </style>
 </head>
+ <script>
+  const agreeBox = document.getElementById('agreeBox');
+  const signupBtn = document.getElementById('signupBtn');
 
+  agreeBox.addEventListener('change', function () {
+    if (this.checked) {
+      signupBtn.style.background = '#1f7a3f';
+      signupBtn.style.pointerEvents = 'auto';
+      signupBtn.style.cursor = 'pointer';
+    } else {
+      signupBtn.style.background = '#9fbfa8';
+      signupBtn.style.pointerEvents = 'none';
+      signupBtn.style.cursor = 'not-allowed';
+    }
+  });
+</script>
 <body>
 
 <header>
@@ -133,7 +148,25 @@ tr.potluck td {
     </div>
 
     <div style="text-align:center; margin:18px 0;">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdtwMJlRhOLyqFOg8ARWdWrFtxw-OuMV4mxVBYaQ-u8fdTIxA/viewform?usp=header" target="_blank"
+      <div style="text-align:center; margin:18px 0;">
+  <a id="signupBtn"
+     href="https://docs.google.com/forms/d/e/1FAIpQLSdtwMJlRhOLyqFOg8ARWdWrFtxw-OuMV4mxVBYaQ-u8fdTIxA/viewform?usp=header"
+     target="_blank"
+     style="
+       display:inline-block;
+       padding:12px 20px;
+       background:#9fbfa8;
+       color:#ffffff;
+       text-decoration:none;
+       border-radius:6px;
+       font-weight:bold;
+       font-size:15px;
+       pointer-events:none;
+       cursor:not-allowed;
+     ">
+    Sign Up to Host Iftar
+  </a>
+</div>
          style="
            display:inline-block;
            padding:12px 20px;
